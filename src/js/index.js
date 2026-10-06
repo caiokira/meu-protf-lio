@@ -1,37 +1,65 @@
-/*
-    Objetivo 1 - quando o usuário clicar no botão de mostrar mais deve abrir os projetos que estão escondidos no html
+const cabecalho = document.querySelector('.cabecalho');
+const botaoMenu = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+const linksMenu = document.querySelectorAll('.menu a');
 
-        Passo 1 - pegar o botão mostrar mais no JS pra poder verificar quando o usuário clicar em cima dele
+// Fundo do cabeçalho ao rolar a página
+function atualizarCabecalho() {
+    cabecalho.classList.toggle('rolado', window.scrollY > 20);
+}
 
-        Passo 2 - identificar o clique no botão
-        
-        Passo 3 - adicionar a classe "ativo" nos projetos escondidos
+window.addEventListener('scroll', atualizarCabecalho, { passive: true });
+atualizarCabecalho();
 
-    Objetivo 2 - esconder o botão de mostrar mais
-        Passo 1 - pegar o botão e esconder ele
-*/
+// Menu mobile
+function alternarMenu(abrir) {
+    menu.classList.toggle('aberto', abrir);
+    cabecalho.classList.toggle('menu-aberto', abrir);
+    botaoMenu.setAttribute('aria-expanded', String(abrir));
+    botaoMenu.setAttribute('aria-label', abrir ? 'Fechar menu' : 'Abrir menu');
+    botaoMenu.querySelector('i').className = abrir ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+}
 
-// Objetivo 1 - quando o usuário clicar no botão de mostrar mais deve abrir os projetos que estão escondidos no html
-
-// Passo 1 - pegar o botão mostrar mais no JS pra poder verificar quando o usuário clicar em cima dele
-const botaoMostrarProjetos = document.querySelector('.btn-mostrar-projetos');
-const projetosInativos = document.querySelectorAll('.projeto:not(.ativo)');
-
-botaoMostrarProjetos.addEventListener('click', () => {
-    // Passo 3 - adicionar a classe "ativo" nos projetos escondidos
-    mostrarMaisProjetos();
-
-    // Objetivo 2 - esconder o botão de mostrar mais
-    // Passo 1 - pegar o botão e esconder ele
-    esconderBotao();
+botaoMenu.addEventListener('click', () => {
+    alternarMenu(!menu.classList.contains('aberto'));
 });
 
-function esconderBotao() {
-    botaoMostrarProjetos.classList.add("remover");
-}
+linksMenu.forEach(link => {
+    link.addEventListener('click', () => alternarMenu(false));
+});
 
-function mostrarMaisProjetos() {
-    projetosInativos.forEach(projetoInativo => {
-        projetoInativo.classList.add('ativo');
+document.addEventListener('keydown', evento => {
+    if (evento.key === 'Escape') alternarMenu(false);
+});
+
+// Destaca no menu a seção visível
+const secoes = document.querySelectorAll('main section[id]');
+
+const observadorSecoes = new IntersectionObserver(entradas => {
+    entradas.forEach(entrada => {
+        if (!entrada.isIntersecting) return;
+
+        linksMenu.forEach(link => {
+            link.classList.toggle('ativo', link.getAttribute('href') === `#${entrada.target.id}`);
+        });
     });
-}
+}, { rootMargin: '-50% 0px -50% 0px' });
+
+secoes.forEach(secao => observadorSecoes.observe(secao));
+
+// Animação de entrada dos elementos
+const elementosRevelar = document.querySelectorAll('.revelar');
+
+const observadorRevelar = new IntersectionObserver((entradas, observador) => {
+    entradas.forEach(entrada => {
+        if (!entrada.isIntersecting) return;
+
+        entrada.target.classList.add('visivel');
+        observador.unobserve(entrada.target);
+    });
+}, { threshold: 0.12 });
+
+elementosRevelar.forEach(elemento => observadorRevelar.observe(elemento));
+
+// Ano atual no rodapé
+document.getElementById('ano').textContent = new Date().getFullYear();

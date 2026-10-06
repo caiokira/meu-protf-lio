@@ -3,181 +3,342 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caio Henrique - Desenvolvedor Frontend</title>
+    <title>Caio Henrique | Desenvolvedor Front-end</title>
+    <meta name="description" content="Portfólio de Caio Henrique, desenvolvedor front-end focado em interfaces responsivas, acessíveis e bem construídas com HTML, CSS e JavaScript.">
+    <meta name="author" content="Caio Henrique">
+    <meta name="theme-color" content="#0a0d14">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Caio Henrique | Desenvolvedor Front-end">
+    <meta property="og:description" content="Interfaces responsivas, acessíveis e bem construídas. Conheça meus projetos.">
+    <meta property="og:image" content="./src/imagens/foto-perfil.png">
+    <meta property="og:locale" content="pt_BR">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230a0d14'/><text x='50%' y='54%' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-weight='700' font-size='28' fill='%238b5cf6'>CH</text></svg>">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <script>document.documentElement.classList.add('js');</script>
 
     <link rel="stylesheet" href="./src/css/reset.css">
     <link rel="stylesheet" href="./src/css/estilos.css">
     <link rel="stylesheet" href="./src/css/responsivo.css">
-
 </head>
 <body>
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
     <header class="cabecalho">
-        <a href="#">
-            <h1 class="logo">CH</h1>
-        </a>
+        <div class="container cabecalho-conteudo">
+            <a href="#inicio" class="logo" aria-label="Caio Henrique — início">
+                <span class="logo-marca">&lt;CH /&gt;</span>
+            </a>
 
-        <nav class="menu">
-            <ul>
-                <li>
-                    <a href="#projetos">Meus projetos</a>
-                </li>
-            </ul>
-        </nav>
+            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <nav class="menu" id="menu" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#stack">Stack</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#contato" class="btn btn-pequeno btn-primario">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <section class="home">
-        <div class="informacoes">
-            <h1>Olá! sou Caio Henrique</h1>
-            <p>Um desenvolvedor frontend em formação apaixonado por tecnologia.</p>
-            <p>Estou sempre me desafiando com novos projetos e buscando feedback na comunidade de programação, além de
-            compartilhar meus conhecimentos. 😁</p>
-            <p>Ah, também sou fã de jogos, filmes, series e animes. 💚</p>
 
-            <ul class="redes-sociais">
-                <li>
-                    <a href="https://www.linkedin.com/in/caio-henrique-3145a9274/" title="Ir para o Linkedin"
-                        target="_blank">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </li>
+    <main id="conteudo">
+        <section class="hero" id="inicio">
+            <div class="container hero-conteudo">
+                <div class="hero-texto revelar">
+                    <span class="disponivel">
+                        <span class="ponto"></span> Aberto a oportunidades
+                    </span>
 
-                <li>
-                    <a href="https://wa.me/5583981776871" title="Enviar Mensagem no WhatsApp" target="_blank">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                </li>
+                    <h1>
+                        Caio Henrique
+                        <span class="destaque">Desenvolvedor Front-end</span>
+                    </h1>
 
-                <li>
-                    <a href="https://github.com/caiokira" title="Ir para o GitHub" target="_blank">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </li>
+                    <p class="hero-descricao">
+                        Construo interfaces web responsivas, acessíveis e com atenção aos detalhes,
+                        transformando layouts em código limpo e organizado com HTML, CSS e JavaScript.
+                    </p>
 
-                <li>
-                    <a href="https://www.instagram.com/ca1o_henr1que/" title="Ir para o Instagram" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
+                    <div class="hero-acoes">
+                        <a href="#projetos" class="btn btn-primario">
+                            Ver projetos <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                        <a href="#contato" class="btn btn-secundario">Entrar em contato</a>
+                    </div>
 
-        <div class="container-foto">
-            <div class="foto sombra-interna">
-                <img src="./src/imagens/WhatsApp Image 2024-05-06 at 19.40.15-Photoroom.png-Photoroom (1).png" alt="foto do portfólio do Caio"/>
+                    <ul class="redes-sociais" aria-label="Redes profissionais">
+                        <li>
+                            <a href="https://www.linkedin.com/in/caio-henrique-3145a9274/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/caiokira" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/5583981776871" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="hero-foto revelar">
+                    <div class="foto-moldura">
+                        <img src="./src/imagens/foto-perfil.png" alt="Foto de Caio Henrique" width="460" height="460">
+                    </div>
+                    <div class="cartao-codigo" aria-hidden="true">
+                        <span class="c-palavra">const</span> <span class="c-var">dev</span> = {<br>
+                        &nbsp;&nbsp;nome: <span class="c-texto">'Caio'</span>,<br>
+                        &nbsp;&nbsp;foco: <span class="c-texto">'Front-end'</span>,<br>
+                        &nbsp;&nbsp;aprendendo: <span class="c-bool">true</span><br>
+                        };
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
-    <section class="projetos" id="projetos">
-        <h2 class="titulo">Meus projetos</h2>
+        </section>
 
-        <div class="container-projetos">
-            <div class="projeto ativo">
-                <a href="https://caiokira.github.io/x-men/" target="_blank">
-                    <img src="./src/imagens/projeto-x-men.png" alt="Projeto x-men">
-                    <h3>Projeto 1</h3>
+        <section class="secao" id="sobre">
+            <div class="container">
+                <div class="secao-cabecalho revelar">
+                    <span class="secao-rotulo">01 — Sobre</span>
+                    <h2>Quem sou eu</h2>
+                </div>
 
-                    <div class="informacoes-projeto">
+                <div class="sobre-grid">
+                    <div class="sobre-texto revelar">
                         <p>
-                            Projeto feito usando HTML, CSS e JavaScript
+                            Sou desenvolvedor front-end com foco em criar experiências web bem estruturadas,
+                            que funcionem bem em qualquer tamanho de tela. Gosto de transformar ideias em
+                            interfaces claras e de entender o porquê de cada decisão no código.
                         </p>
-                        <p>🔗 Ver no GitHub Pages</p>
+                        <p>
+                            Aprendo construindo: cada projeto é uma oportunidade de praticar boas práticas de
+                            HTML semântico, CSS organizado e JavaScript para interatividade. Busco feedback
+                            constantemente na comunidade e compartilho o que aprendo.
+                        </p>
+                        <p>
+                            Procuro uma oportunidade em um time de tecnologia onde eu possa contribuir,
+                            evoluir tecnicamente e entregar valor real para o produto.
+                        </p>
                     </div>
-                </a>
-            </div>
 
-            <div class="projeto ativo">
-                <a href="https://caiokira.github.io/pokedex-projeto" target="_blank">
-                    <img src="./src/imagens/projeto-listagem-pokemon.png" alt="Projeto listagem de pokemons" />
-                    <h3>Projeto 2</h3>
-                    <div class="informacoes-projeto">
-                        <p>Projeto feito usando HTML, CSS e JavaScript</p>
-                        <p>🔗 Ver no GitHub Pages</p>
-                    </div>
-                </a>
+                    <ul class="sobre-destaques">
+                        <li class="cartao revelar">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                            <div>
+                                <h3>Responsividade</h3>
+                                <p>Layouts mobile-first que se adaptam a qualquer dispositivo.</p>
+                            </div>
+                        </li>
+                        <li class="cartao revelar">
+                            <i class="fa-solid fa-code"></i>
+                            <div>
+                                <h3>Código limpo</h3>
+                                <p>HTML semântico, CSS organizado e JavaScript legível.</p>
+                            </div>
+                        </li>
+                        <li class="cartao revelar">
+                            <i class="fa-solid fa-universal-access"></i>
+                            <div>
+                                <h3>Acessibilidade</h3>
+                                <p>Interfaces pensadas para que todas as pessoas consigam usar.</p>
+                            </div>
+                        </li>
+                        <li class="cartao revelar">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                            <div>
+                                <h3>Aprendizado contínuo</h3>
+                                <p>Sempre estudando e me desafiando com novos projetos.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </section>
 
-            
-            <div class="projeto ativo">
-                <a href="https://caiokira.github.io/projeto-site-gekko/" target="_blank">
-                    <img src="./src/imagens/Captura de tela 2024-04-26 185837.png" alt="Projeto gekko valorant" />
-                    <h3>Projeto 3</h3>
-                    <div class="informacoes-projeto">
-                        <p>Projeto feito usando HTML, CSS e JavaScript</p>
-                        <p>🔗 Ver no GitHub Pages</p>
-                    </div>
-                </a>
-            </div>
+        <section class="secao secao-alternada" id="stack">
+            <div class="container">
+                <div class="secao-cabecalho revelar">
+                    <span class="secao-rotulo">02 — Stack</span>
+                    <h2>Tecnologias e ferramentas</h2>
+                    <p>As ferramentas que uso no dia a dia para construir e publicar projetos.</p>
+                </div>
 
-            <div class="projeto ativo">
-                <a href="https://caiokira.github.io/relo-gio/" target="_blank">
-                    <img src="./src/imagens/Captura de tela 2024-04-26 185759.png" alt="Projeto relogio" />
-                    <h3>Projeto 4</h3>
-                    <div class="informacoes-projeto">
-                        <p>Projeto feito usando HTML, CSS e JavaScript</p>
-                        <p>🔗 Ver no GitHub Pages</p>
-                    </div>
-                </a>
+                <ul class="stack-grid">
+                    <li class="stack-item revelar"><i class="devicon-html5-plain colored"></i><span>HTML5</span></li>
+                    <li class="stack-item revelar"><i class="devicon-css3-plain colored"></i><span>CSS3</span></li>
+                    <li class="stack-item revelar"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></li>
+                    <li class="stack-item revelar"><i class="devicon-git-plain colored"></i><span>Git</span></li>
+                    <li class="stack-item revelar"><i class="devicon-github-original"></i><span>GitHub</span></li>
+                    <li class="stack-item revelar"><i class="devicon-vscode-plain colored"></i><span>VS Code</span></li>
+                    <li class="stack-item revelar"><i class="fa-solid fa-mobile-screen"></i><span>Design responsivo</span></li>
+                </ul>
             </div>
+        </section>
 
-            <div class="projeto">
-                <a href="#" target="_blank">
-                    <img src="https://via.placeholder.com/515X700" alt="Capa do projeto" />
-                    <h3>Projeto 5</h3>
-                    <div class="informacoes-projeto">
-                        <p>Projeto feito usando HTML, CSS e JavaScript</p>
-                        <p>🔗 Ver no GitHub Pages</p>
-                    </div>
-                </a>
-            </div>
+        <section class="secao" id="projetos">
+            <div class="container">
+                <div class="secao-cabecalho revelar">
+                    <span class="secao-rotulo">03 — Projetos</span>
+                    <h2>Projetos em destaque</h2>
+                    <p>Uma seleção de trabalhos com código aberto e versão publicada para testar.</p>
+                </div>
 
-            <div class="projeto">
-                <a href="#" target="_blank">
-                    <img src="https://via.placeholder.com/515X700" alt="Capa do projeto" />
-                    <h3>Projeto 6</h3>
-                    <div class="informacoes-projeto">
-                        <p>Projeto feito usando HTML, CSS e JavaScript</p>
-                        <p>🔗 Ver no GitHub Pages</p>
-                    </div>
-                </a>
-            </div>
+                <div class="projetos-grid">
+                    <article class="projeto revelar">
+                        <div class="projeto-imagem">
+                            <img src="./src/imagens/projeto-x-men.png" alt="Tela do projeto X-Men mostrando o personagem Magneto e a seleção de personagens" loading="lazy">
+                        </div>
+                        <div class="projeto-conteudo">
+                            <h3>X-Men — Seleção de personagens</h3>
+                            <p>
+                                Página interativa onde o usuário escolhe um personagem e vê sua imagem,
+                                nome e descrição atualizados dinamicamente via manipulação do DOM.
+                            </p>
+                            <ul class="tags">
+                                <li>HTML</li><li>CSS</li><li>JavaScript</li><li>DOM</li>
+                            </ul>
+                            <div class="projeto-links">
+                                <a href="https://caiokira.github.io/x-men/" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver online
+                                </a>
+                                <a href="https://github.com/caiokira/x-men" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-github"></i> Código
+                                </a>
+                            </div>
+                        </div>
+                    </article>
 
-            <div class="projeto">
-                <a href="#" target="_blank">
-                    <img src="https://via.placeholder.com/515X700" alt="Capa do projeto" />
-                    <h3>Projeto 7</h3>
-                    <div class="informacoes-projeto">
-                        <p>Projeto feito usando HTML, CSS e JavaScript</p>
-                        <p>🔗 Ver no GitHub Pages</p>
-                    </div>
-                </a>
-            </div>
+                    <article class="projeto revelar">
+                        <div class="projeto-imagem">
+                            <img src="./src/imagens/projeto-pokedex.png" alt="Tela da Pokédex com cards de Pokémon e seus tipos" loading="lazy">
+                        </div>
+                        <div class="projeto-conteudo">
+                            <h3>Pokédex</h3>
+                            <p>
+                                Listagem de Pokémon em cards com número, tipos e descrição,
+                                layout em grid responsivo e alternância de tema claro/escuro.
+                            </p>
+                            <ul class="tags">
+                                <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Tema claro/escuro</li>
+                            </ul>
+                            <div class="projeto-links">
+                                <a href="https://caiokira.github.io/pokedex-projeto" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver online
+                                </a>
+                                <a href="https://github.com/caiokira/pokedex-projeto" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-github"></i> Código
+                                </a>
+                            </div>
+                        </div>
+                    </article>
 
-            <div class="projeto">
-                <a href="#" target="_blank">
-                    <img src="https://via.placeholder.com/515X700" alt="Capa do projeto" />
-                    <h3>Projeto 8</h3>
-                    <div class="informacoes-projeto">
-                        <p>Projeto feito usando HTML, CSS e JavaScript</p>
-                        <p>🔗 Ver no GitHub Pages</p>
-                    </div>
-                </a>
+                    <article class="projeto revelar">
+                        <div class="projeto-imagem">
+                            <img src="./src/imagens/projeto-gekko.png" alt="Tela do site do agente Gekko, de Valorant" loading="lazy">
+                        </div>
+                        <div class="projeto-conteudo">
+                            <h3>Gekko — Landing page Valorant</h3>
+                            <p>
+                                Landing page temática do agente Gekko com carrossel de imagens,
+                                tipografia de impacto e identidade visual fiel ao jogo.
+                            </p>
+                            <ul class="tags">
+                                <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Carrossel</li>
+                            </ul>
+                            <div class="projeto-links">
+                                <a href="https://caiokira.github.io/projeto-site-gekko/" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver online
+                                </a>
+                                <a href="https://github.com/caiokira/projeto-site-gekko" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-github"></i> Código
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="projeto revelar">
+                        <div class="projeto-imagem">
+                            <img class="centralizada" src="./src/imagens/projeto-relogio.png" alt="Tela do relógio digital mostrando horas, minutos e segundos" loading="lazy">
+                        </div>
+                        <div class="projeto-conteudo">
+                            <h3>Relógio digital</h3>
+                            <p>
+                                Relógio em tempo real que atualiza horas, minutos e segundos a cada
+                                segundo usando a API de datas do JavaScript.
+                            </p>
+                            <ul class="tags">
+                                <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Date API</li>
+                            </ul>
+                            <div class="projeto-links">
+                                <a href="https://caiokira.github.io/relo-gio/" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver online
+                                </a>
+                                <a href="https://github.com/caiokira/relo-gio" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-github"></i> Código
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="projetos-mais revelar">
+                    <a href="https://github.com/caiokira?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn btn-secundario">
+                        <i class="fa-brands fa-github"></i> Ver todos os repositórios
+                    </a>
+                </div>
             </div>
+        </section>
+
+        <section class="secao secao-alternada" id="contato">
+            <div class="container">
+                <div class="contato-caixa revelar">
+                    <span class="secao-rotulo">04 — Contato</span>
+                    <h2>Vamos trabalhar juntos?</h2>
+                    <p>
+                        Estou aberto a vagas de estágio, júnior e projetos freelance em front-end.
+                        Me chame por qualquer um dos canais abaixo — respondo rápido.
+                    </p>
+                    <div class="contato-acoes">
+                        <a href="https://www.linkedin.com/in/caio-henrique-3145a9274/" target="_blank" rel="noopener noreferrer" class="btn btn-primario">
+                            <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+                        </a>
+                        <a href="https://wa.me/5583981776871" target="_blank" rel="noopener noreferrer" class="btn btn-secundario">
+                            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="https://github.com/caiokira" target="_blank" rel="noopener noreferrer" class="btn btn-secundario">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="container rodape-conteudo">
+            <p>&copy; <span id="ano">2026</span> Caio Henrique. Feito com HTML, CSS e JavaScript.</p>
+            <a href="#inicio" class="voltar-topo" aria-label="Voltar ao topo">
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
         </div>
-
-        <button class="btn-mostrar-projetos">Mostrar mais</button>
-    </section>
+    </footer>
 
     <script src="./src/js/index.js"></script>
-
 </body>
-
 </html>

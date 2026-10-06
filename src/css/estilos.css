@@ -528,6 +528,128 @@ button:focus-visible {
     color: var(--cor-secundaria);
 }
 
+.github-ao-vivo {
+    margin-top: 56px;
+}
+
+.github-cabecalho {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px 16px;
+    margin-bottom: 20px;
+}
+
+.github-cabecalho h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.github-fonte {
+    font-family: var(--fonte-mono);
+    font-size: 12px;
+    color: var(--cor-texto-suave);
+}
+
+.repos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.repo {
+    min-height: 150px;
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    transition: border-color var(--transicao), transform var(--transicao);
+}
+
+.repo:hover {
+    border-color: var(--cor-primaria);
+    transform: translateY(-3px);
+}
+
+.repo a {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+    padding: 20px;
+}
+
+.repo-nome {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--fonte-mono);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--cor-texto);
+    word-break: break-word;
+}
+
+.repo-nome i {
+    color: var(--cor-texto-suave);
+}
+
+.repo-descricao {
+    flex: 1;
+    font-size: 14px;
+    color: var(--cor-texto-suave);
+}
+
+.repo-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 13px;
+    color: var(--cor-texto-suave);
+}
+
+.repo-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.repo-linguagem::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--cor-linguagem, var(--cor-primaria));
+}
+
+.repo-carregando {
+    background: linear-gradient(90deg, var(--cor-superficie) 0%, #1b2130 50%, var(--cor-superficie) 100%);
+    background-size: 200% 100%;
+    animation: carregando 1.4s ease infinite;
+}
+
+.repo-carregando:hover {
+    border-color: var(--cor-borda);
+    transform: none;
+}
+
+.repos-erro {
+    grid-column: 1 / -1;
+    padding: 24px;
+    border: 1px dashed var(--cor-borda);
+    border-radius: var(--raio);
+    color: var(--cor-texto-suave);
+    text-align: center;
+}
+
+.repos-erro a {
+    color: var(--cor-secundaria);
+    font-weight: 600;
+}
+
 .projetos-mais {
     display: flex;
     justify-content: center;
@@ -605,6 +727,11 @@ button:focus-visible {
 @keyframes gradiente {
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
+}
+
+@keyframes carregando {
+    0% { background-position: 100% 0; }
+    100% { background-position: -100% 0; }
 }
 
 @keyframes pulso {

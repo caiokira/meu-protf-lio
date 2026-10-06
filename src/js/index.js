@@ -63,3 +63,84 @@ elementosRevelar.forEach(elemento => observadorRevelar.observe(elemento));
 
 // Ano atual no rodapé
 document.getElementById('ano').textContent = new Date().getFullYear();
+
+// Repositórios recentes via API do GitHub
+const USUARIO_GITHUB = 'caiokira';
+const listaRepos = document.getElementById('repos');
+
+const coresLinguagens = {
+    JavaScript: '#f1e05a',
+    TypeScript: '#3178c6',
+    HTML: '#e34c26',
+    CSS: '#663399',
+    Python: '#3572a5',
+};
+
+function formatarData(dataIso) {
+    return new Date(dataIso).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' });
+}
+
+function criarCardRepo(repo) {
+    const item = document.createElement('li');
+    item.className = 'repo';
+
+    const link = document.createElement('a');
+    link.href = repo.html_url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+
+    const nome = document.createElement('span');
+    nome.className = 'repo-nome';
+    nome.innerHTML = '<i class="fa-regular fa-folder"></i>';
+    nome.append(repo.name);
+
+    const descricao = document.createElement('p');
+    descricao.className = 'repo-descricao';
+    descricao.textContent = repo.description || 'Sem descrição.';
+
+    const meta = document.createElement('div');
+    meta.className = 'repo-meta';
+
+    if (repo.language) {
+        const linguagem = document.createElement('span');
+        linguagem.className = 'repo-linguagem';
+        linguagem.style.setProperty('--cor-linguagem', coresLinguagens[repo.language] || '#8b5cf6');
+        linguagem.textContent = repo.language;
+        meta.append(linguagem);
+    }
+
+    const atualizado = document.createElement('span');
+    atualizado.innerHTML = '<i class="fa-regular fa-clock"></i>';
+    atualizado.append(`Atualizado em ${formatarData(repo.pushed_at)}`);
+    meta.append(atualizado);
+
+    link.append(nome, descricao, meta);
+    item.append(link);
+    return item;
+}
+
+function mostrarErroRepos() {
+    listaRepos.innerHTML = `
+        <li class="repos-erro">
+            Não foi possível carregar os repositórios agora.
+            <a href="https://github.com/${USUARIO_GITHUB}?tab=repositories" target="_blank" rel="noopener noreferrer">Ver direto no GitHub</a>
+        </li>`;
+}
+
+async function carregarRepos() {
+    try {
+        const resposta = await fetch(`https://api.github.com/users/${USUARIO_GITHUB}/repos?sort=pushed&per_page=20`);
+        if (!resposta.ok) throw new Error(`Erro ${resposta.status}`);
+
+        const repos = await resposta.json();
+        const recentes = repos.filter(repo => !repo.fork).slice(0, 6);
+
+        if (recentes.length === 0) throw new Error('Nenhum repositório encontrado');
+
+        listaRepos.replaceChildren(...recentes.map(criarCardRepo));
+    } catch (erro) {
+        mostrarErroRepos();
+    }
+}
+
+if (listaRepos) carregarRepos();

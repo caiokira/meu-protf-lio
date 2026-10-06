@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo | Caio Henrique — Desenvolvedor Front-end</title>
+    <meta name="description" content="Currículo de Caio Henrique, desenvolvedor front-end.">
+    <meta name="robots" content="noindex">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230a0d14'/><text x='50%' y='54%' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-weight='700' font-size='28' fill='%238b5cf6'>CH</text></svg>">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/curriculo.css">
+</head>
+<body>
+    <div class="barra-acoes">
+        <a href="./index.html" class="acao acao-secundaria">
+            <i class="fa-solid fa-arrow-left"></i> Voltar ao portfólio
+        </a>
+        <button type="button" class="acao acao-primaria" id="baixar-pdf">
+            <i class="fa-solid fa-file-arrow-down"></i> Baixar PDF
+        </button>
+    </div>
+
+    <main class="folha">
+        <header class="cv-cabecalho">
+            <div>
+                <h1>Caio Henrique</h1>
+                <p class="cv-cargo">Desenvolvedor Front-end</p>
+            </div>
+            <ul class="cv-contatos">
+                <li>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <a href="https://www.linkedin.com/in/caio-henrique-3145a9274/">linkedin.com/in/caio-henrique-3145a9274</a>
+                </li>
+                <li>
+                    <i class="fa-brands fa-github"></i>
+                    <a href="https://github.com/caiokira">github.com/caiokira</a>
+                </li>
+                <li>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <a href="https://wa.me/5583981776871">+55 (83) 98177-6871</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-globe"></i>
+                    <a href="https://caiokira.github.io/meu-protf-lio/">caiokira.github.io/meu-protf-lio</a>
+                </li>
+            </ul>
+        </header>
+
+        <section class="cv-secao">
+            <h2>Resumo</h2>
+            <p>
+                Desenvolvedor front-end focado em construir interfaces web responsivas, acessíveis e bem
+                estruturadas com HTML, CSS e JavaScript. Experiência prática com manipulação do DOM,
+                layouts mobile-first, consumo de APIs e versionamento com Git. Busco uma oportunidade
+                de estágio ou nível júnior em um time de tecnologia para contribuir com o produto e
+                evoluir tecnicamente.
+            </p>
+        </section>
+
+        <section class="cv-secao">
+            <h2>Habilidades técnicas</h2>
+            <dl class="cv-habilidades">
+                <div>
+                    <dt>Linguagens</dt>
+                    <dd>HTML5, CSS3, JavaScript (ES6+)</dd>
+                </div>
+                <div>
+                    <dt>Front-end</dt>
+                    <dd>Design responsivo, Flexbox, CSS Grid, manipulação do DOM, Fetch API, acessibilidade web</dd>
+                </div>
+                <div>
+                    <dt>Ferramentas</dt>
+                    <dd>Git, GitHub, GitHub Pages, VS Code</dd>
+                </div>
+            </dl>
+        </section>
+
+        <section class="cv-secao">
+            <h2>Projetos</h2>
+
+            <article class="cv-projeto">
+                <div class="cv-projeto-topo">
+                    <h3>Portfólio pessoal</h3>
+                    <a href="https://github.com/caiokira/meu-protf-lio">github.com/caiokira/meu-protf-lio</a>
+                </div>
+                <ul>
+                    <li>Site responsivo com HTML semântico, CSS com variáveis e JavaScript sem frameworks.</li>
+                    <li>Integração com a API REST do GitHub para listar repositórios em tempo real, com estados de carregamento e erro.</li>
+                    <li>Boas práticas de acessibilidade: navegação por teclado, atributos ARIA e suporte a movimento reduzido.</li>
+                </ul>
+            </article>
+
+            <article class="cv-projeto">
+                <div class="cv-projeto-topo">
+                    <h3>X-Men — Seleção de personagens</h3>
+                    <a href="https://caiokira.github.io/x-men/">caiokira.github.io/x-men</a>
+                </div>
+                <ul>
+                    <li>Página interativa que atualiza imagem, nome e descrição do personagem selecionado via manipulação do DOM.</li>
+                </ul>
+            </article>
+
+            <article class="cv-projeto">
+                <div class="cv-projeto-topo">
+                    <h3>Pokédex</h3>
+                    <a href="https://caiokira.github.io/pokedex-projeto">caiokira.github.io/pokedex-projeto</a>
+                </div>
+                <ul>
+                    <li>Listagem de Pokémon em cards com tipos e descrição, grid responsivo e alternância de tema claro/escuro.</li>
+                </ul>
+            </article>
+
+            <article class="cv-projeto">
+                <div class="cv-projeto-topo">
+                    <h3>Gekko — Landing page Valorant</h3>
+                    <a href="https://caiokira.github.io/projeto-site-gekko/">caiokira.github.io/projeto-site-gekko</a>
+                </div>
+                <ul>
+                    <li>Landing page temática com carrossel de imagens e identidade visual inspirada no jogo.</li>
+                </ul>
+            </article>
+
+            <article class="cv-projeto">
+                <div class="cv-projeto-topo">
+                    <h3>Relógio digital</h3>
+                    <a href="https://caiokira.github.io/relo-gio/">caiokira.github.io/relo-gio</a>
+                </div>
+                <ul>
+                    <li>Relógio em tempo real com atualização a cada segundo usando a API de datas do JavaScript.</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('baixar-pdf').addEventListener('click', () => window.print());
+    </script>
+</body>
+</html>

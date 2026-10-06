@@ -33,6 +33,10 @@
         grid-template-columns: 1fr;
         gap: 40px;
     }
+
+    .repos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -82,7 +86,8 @@
         border-bottom-color: var(--cor-borda);
     }
 
-    .projetos-grid {
+    .projetos-grid,
+    .repos-grid {
         grid-template-columns: 1fr;
     }
 
